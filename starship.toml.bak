@@ -1,0 +1,80 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# LEFT PROMPT
+# format = """
+# [┌╴\\(](bold green)[$username㉿$hostname](bold blue)[\\)](bold green)
+# [└─](green) $character
+# """
+
+format = """
+[┌╴\\(](bold green)[$directory](bold blue)[\\)](bold green)
+[└─](green) $character
+"""
+# [│](bold green) $git_branch$git_status
+# RIGHT PROMPT
+# right_format = """$os$time $directory"""
+
+# Prompt character
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[✗](bold red)"
+
+# Username
+[username]
+style_user = "blue bold"
+style_root = "red bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+# Hostname
+[hostname]
+ssh_only = false
+format = "[$hostname](bold blue)"
+disabled = false
+
+# OS (Right-aligned)
+[os]
+style = "bold green"
+format = "[ $name]($style) "  # Nerd Font icon for OS
+
+# Time (Right-aligned)
+[time]
+disabled = true
+format = "[ $time](dimmed white) "  # Nerd Font clock icon
+time_format = "%T"
+
+# # Directory (Right-aligned)
+# [directory]
+# style = "cyan"
+# read_only = " "
+# truncation_length = 3
+# truncate_to_repo = false
+# format = "[ $path]($style)[$read_only]($style)"  # Nerd Font folder icon
+
+# Git branch
+[git_branch]
+symbol = " "
+style = "purple"
+format = "[$symbol$branch]($style) "
+
+# Git status
+[git_status]
+style = "red"
+format = "[$all_status]($style)"
+disabled = false
+
+# Battery (Optional, left as-is)
+[battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+disabled = false
+
+# Memory Usage (Optional, left as-is)
+[memory_usage]
+format = "[$symbol${ram}( | ${swap})]($style) "
+threshold = 70
+style = "bold dimmed white"
+disabled = false

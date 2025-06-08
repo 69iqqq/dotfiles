@@ -1,0 +1,18 @@
+# NOTE: you can use vars with $<var> and ${<var>} as long as the str is double quoted: ""
+# WARNING: hex colors can't contain capital letters
+
+# --> Catppuccin (Eldritch Colors)
+thm_bg="default"          # Default Background
+thm_fg="#000000"          # Lighthouse White (Foreground)
+thm_cyan="#04d1f9"        # Watery Tomb Blue (Secondary Cyan)
+thm_black="#212337"       # Sunken Depths Grey (Background)
+thm_gray="#323449"        # Shallow Depths Grey (Current Line)
+thm_magenta="#a48cf2"     # Lovecraft Purple (Purple Accent)
+thm_pink="#f265b5"        # Pustule Pink
+thm_red="#f16c75"         # R'lyeh' Red (Error)
+thm_green="#37f499"       # Great Old One Green (Primary Green)
+thm_yellow="#f1fc79"      # Gold of Yuggoth (Yellow)
+thm_blue="#02a3c7"        # Watery Tomb Blue (Repeated for Cyan consistency)
+thm_orange="#04d1f9"      # Dreaming Orange
+thm_black4="#323449"      # Shallow Depths Grey (Alternative Grey)
+

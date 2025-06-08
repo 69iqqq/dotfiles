@@ -1,0 +1,14 @@
+# --> Everforest Theme
+thm_bg="default"          # Default Background
+thm_fg="#000000"          # Foreground
+thm_cyan="#7fbbb3"        # Cyan (used as secondary cyan)
+thm_black="#2b3339"       # Background (color0)
+thm_gray="#424a50"        # Current Line / Shallow Depths Grey (color3)
+thm_magenta="#d699b6"     # Magenta / Purple Accent (color9 / color15)
+thm_pink="#d699b6"        # Pink (closest: also color9/15)
+thm_red="#e67e80"         # Error Red (color14)
+thm_green="#83c092"       # Primary Green (color10)
+thm_yellow="#dbbc7f"      # Yellow / Gold (color11)
+thm_blue="#7fbbb3"        # Blue (used same as Cyan for consistency)
+thm_orange="#e69875"      # Orange (color12)
+thm_black4="#424a50"      # Alternative Grey / Current Line (color3)
