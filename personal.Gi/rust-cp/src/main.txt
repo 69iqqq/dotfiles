@@ -1,0 +1,19 @@
+use std::io::{self, BufRead};
+
+fn main() {
+    let stdin = io::stdin();
+    let mut lines = stdin.lock().lines();
+
+    let t: usize = lines.next().unwrap().unwrap().trim().parse().unwrap();
+    for _ in 0..t {
+        solve(&mut lines);
+    }
+}
+
+fn solve(lines: &mut std::io::Lines<std::io::StdinLock>) {
+    let line = lines.next().unwrap().unwrap();
+    let numbers: Vec<u64> = line
+        .split_whitespace()
+        .map(|x| x.parse().unwrap())
+        .collect();
+}
