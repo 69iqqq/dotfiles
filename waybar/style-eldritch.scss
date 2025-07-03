@@ -1,0 +1,234 @@
+// === THEME VARIABLES === //
+$font-main: 'SF Pro', monospace;
+$font-size-base: 18px;
+$font-size-small: 15px;
+$font-size-medium: 17px;
+$font-size-large: 19px;
+$font-size-xl: 24px;
+
+$bg-main: rgba(33, 35, 55, 0.6);
+$bg-alt: #212337;
+$bg-box: rgba(128, 128, 128, 0.30);
+$bg-dark: #2a2d45;
+
+$fg-primary: #ebfafa;
+$fg-secondary: #6e738d;
+$fg-accent: #a48cf2;
+$fg-good: #a6da95;
+$fg-warn: #f7c67f;
+$fg-error: #ed8796;
+$fg-cpu: #eed49f;
+$fg-temp: #8aadf4;
+$fg-launcher: #37f499;
+
+$spacing-small: 5px;
+$spacing-medium: 10px;
+$spacing-large: 15px;
+$radius: 5px;
+$box-radius: 12px;
+
+// === GLOBAL STYLES === //
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $font-main;
+  font-weight: bold;
+  font-size: $font-size-base;
+}
+
+window#waybar {
+  background-color: $bg-main;
+}
+
+// === MODULE STYLES === //
+#window {
+  margin-left: $spacing-small;
+  margin-top: 1px;
+  background-color: transparent;
+}
+
+#custom-launcher {
+  font-size: $font-size-base;
+  color: $fg-launcher;
+  padding-right: $spacing-large;
+}
+
+#cpu,
+#memory,
+#temperature {
+  font-size: $font-size-small;
+  background: $bg-dark;
+  margin: $spacing-small 0;
+}
+
+#cpu {
+  color: $fg-cpu;
+  padding: 0 $spacing-medium 0 $spacing-medium + 2;
+  border-radius: $radius 0 0 $radius;
+}
+
+#memory {
+  color: $fg-good;
+  padding: 0 $spacing-medium 0 0;
+}
+
+#temperature {
+  color: $fg-temp;
+  padding: 0 $spacing-medium + 2 0 0;
+  border-radius: 0 $radius $radius 0;
+}
+
+#custom-window-name {
+  color: $fg-accent;
+  margin-right: $spacing-medium;
+  background-color: $bg-alt;
+}
+
+#workspaces button:nth-child(1) label,
+#workspaces button:nth-child(2) label {
+  margin: 0 $spacing-small + 3;
+  background-color: $bg-alt;
+}
+
+#workspaces button:nth-child(1) label {
+  color: $fg-temp;
+}
+
+#workspaces button:nth-child(2) label {
+  color: $fg-error;
+}
+
+#box {
+  background-color: $bg-box;
+  margin: 7px 0;
+  border-radius: $box-radius;
+
+  &:nth-child(n) {
+    padding: 5px $spacing-medium $spacing-small $spacing-medium;
+  }
+
+  &:nth-child(1) {
+    padding-left: $spacing-medium;
+    padding-top: 5px;
+    padding-bottom: $spacing-small;
+  }
+}
+
+#battery,
+#pulseaudio,
+#custom-notification {
+  font-size: $font-size-large;
+  padding: 0 $spacing-small;
+  padding-left: $spacing-small;
+}
+
+#mpris {
+  font-size: $font-size-small;
+  font-weight: normal;
+  padding: 0 $spacing-medium;
+  margin: $spacing-small;
+  border-radius: $radius;
+  animation: blink 3s linear infinite alternate;
+}
+
+@keyframes blink {
+  to {
+    color: #181926;
+  }
+}
+
+#custom-update {
+  color: $fg-launcher;
+  padding-left: $spacing-small;
+  font-size: $font-size-large;
+}
+
+#custom-mic {
+  color: $fg-launcher;
+  padding-left: $spacing-small;
+  font-size: $font-size-xl;
+}
+
+#custom-timer {
+  padding-left: $spacing-small;
+  font-size: $font-size-xl;
+}
+
+#backlight {
+  color: $fg-warn;
+}
+
+#custom-notification {
+  padding-right: $spacing-small;
+}
+
+#custom-right-arr {
+  color: $fg-primary;
+  background-color: $bg-alt;
+}
+
+#network {
+  color: $fg-accent;
+}
+
+#custom-dot {
+  color: $fg-secondary;
+  padding-right: $spacing-medium;
+  background-color: $bg-alt;
+}
+
+#custom-dot-alt {
+  color: #45495D;
+  padding: 0 $spacing-medium;
+}
+
+#disk {
+  color: $fg-accent;
+  background-color: $bg-alt;
+}
+
+#custom-clock-icon {
+  color: $fg-primary;
+  padding: 0 $spacing-medium;
+  margin: $spacing-small 0;
+  border-radius: $radius;
+}
+
+#custom-filler,
+#custom-filler2 {
+  color: $fg-secondary;
+  padding: 0 9px;
+  margin: $spacing-small 0;
+  border-radius: $radius;
+}
+
+#clock {
+  padding: 0 $spacing-medium;
+  font-size: $font-size-medium;
+  font-weight: normal;
+}
+
+#custom-reboot,
+#custom-power,
+#custom-quit {
+  font-size: 16px;
+  margin: $spacing-small;
+  padding: 0 3px;
+}
+
+#custom-reboot {
+  color: $fg-good;
+}
+
+#custom-power {
+  color: $fg-warn;
+}
+
+#custom-quit {
+  color: $fg-error;
+}
+
+#custom-log {
+  font-size: $font-size-small;
+  margin: 1px;
+}

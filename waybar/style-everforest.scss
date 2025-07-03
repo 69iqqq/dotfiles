@@ -1,0 +1,260 @@
+// === EVERFOREST PALETTE VARIABLES === //
+$color0: #2b3339;
+$color1: #323c41;
+$color2: #3a4248;
+$color3: #424a50;
+$color4: #4a5258;
+$color5: #d3c6aa;
+$color6: #ddd0b4;
+$color7: #e7dabe;
+$color8: #7fbbb3;
+$color9: #d699b6;
+$color10: #83c092;
+$color11: #dbbc7f;
+$color12: #e69875;
+$color13: #a7c080;
+$color14: #e67e80;
+$color15: #d699b6;
+
+// === THEME VARIABLES (Everforest) === //
+$font-main: 'SF Pro', monospace;
+$font-size-base: 18px;
+$font-size-small: 15px;
+$font-size-medium: 17px;
+$font-size-large: 19px;
+$font-size-xl: 24px;
+
+$bg-main: rgba($color0, 1);
+$bg-alt: $color1;
+$bg-box: rgba($color2, 0.30);
+$bg-dark: $color2;
+
+$fg-primary: $color5;
+$fg-secondary: $color4;
+$fg-accent: $color13;
+$fg-good: $color10;
+$fg-warn: $color11;
+$fg-error: $color14;
+$fg-cpu: $color11;
+$fg-temp: $color13;
+$fg-launcher: $color8;
+
+$spacing-small: 5px;
+$spacing-medium: 10px;
+$spacing-large: 15px;
+$radius: 5px;
+$box-radius: 12px;
+
+// === GLOBAL STYLES === //
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $font-main;
+  font-weight: bold;
+  font-size: $font-size-base;
+}
+
+window#waybar {
+  background-color: $bg-main;
+}
+
+// === MODULE STYLES === //
+#window {
+  margin-left: $spacing-small;
+  margin-top: 1px;
+  background-color: transparent;
+}
+
+#custom-launcher {
+  font-size: $font-size-base;
+  color: $fg-launcher;
+  padding-right: $spacing-large;
+}
+
+#cpu,
+#memory,
+#temperature {
+  font-size: $font-size-small;
+  background: $bg-dark;
+  margin: $spacing-small 0;
+}
+
+#cpu {
+  color: $fg-cpu;
+  padding: 0 $spacing-medium 0 $spacing-medium + 2;
+  border-radius: $radius 0 0 $radius;
+}
+
+#memory {
+  color: $fg-good;
+  padding: 0 $spacing-medium 0 0;
+}
+
+#temperature {
+  color: $fg-temp;
+  padding: 0 $spacing-medium + 2 0 0;
+  border-radius: 0 $radius $radius 0;
+}
+
+#custom-window-name {
+  color: $fg-accent;
+  margin-right: $spacing-medium;
+  background-color: $bg-alt;
+}
+
+#workspaces button:nth-child(1) label,
+#workspaces button:nth-child(2) label {
+  margin: 0 $spacing-small + 3;
+  background-color: $bg-alt;
+}
+
+#workspaces button:nth-child(1) label {
+  color: $fg-temp;
+}
+
+#workspaces button:nth-child(2) label {
+  color: $fg-error;
+}
+
+#box {
+  background-color: $bg-box;
+  margin: 7px 0;
+  border-radius: $box-radius;
+
+  &:nth-child(n) {
+    padding: 5px $spacing-medium $spacing-small $spacing-medium;
+  }
+
+  &:nth-child(1) {
+    padding-left: $spacing-medium;
+    padding-top: 5px;
+    padding-bottom: $spacing-small;
+  }
+}
+
+#battery,
+#pulseaudio,
+#custom-notification {
+  font-size: $font-size-large;
+  padding: 0 $spacing-small;
+  padding-left: $spacing-small;
+}
+
+#mpris {
+  font-size: $font-size-small;
+  font-weight: normal;
+  padding: 0 $spacing-medium;
+  margin: $spacing-small;
+  border-radius: $radius;
+  animation: blink 3s linear infinite alternate;
+}
+
+@keyframes blink {
+  to {
+    color: $color0;
+  }
+}
+
+#custom-update {
+  color: $fg-launcher;
+  padding-left: $spacing-small;
+  font-size: $font-size-large;
+}
+
+#custom-mic {
+  color: $fg-launcher;
+  padding-left: $spacing-small;
+  font-size: $font-size-xl;
+}
+
+#custom-timer {
+  padding-left: $spacing-small;
+  font-size: $font-size-xl;
+}
+
+#backlight {
+  color: $fg-warn;
+}
+
+#custom-notification {
+  padding-right: $spacing-small;
+}
+
+#custom-right-arr {
+  color: $fg-primary;
+  background-color: $bg-alt;
+}
+
+#network {
+  color: $fg-accent;
+}
+
+#custom-dot {
+  color: $fg-secondary;
+  padding-right: $spacing-medium;
+  background-color: $bg-alt;
+}
+
+#custom-dot-alt {
+  color: $color4;
+  padding: 0 $spacing-medium;
+}
+
+#disk {
+  color: $fg-accent;
+  background-color: $bg-alt;
+}
+
+#custom-clock-icon {
+  color: $fg-primary;
+  padding: 0 $spacing-medium;
+  margin: $spacing-small 0;
+  border-radius: $radius;
+}
+
+#custom-filler,
+#custom-filler2 {
+  color: $fg-secondary;
+  padding: 0 9px;
+  margin: $spacing-small 0;
+  border-radius: $radius;
+}
+
+#clock {
+  padding: 0 $spacing-medium;
+  font-size: $font-size-medium;
+  font-weight: normal;
+}
+
+#custom-reboot,
+#custom-power,
+#custom-quit {
+  font-size: 16px;
+  margin: $spacing-small;
+  padding: 0 3px;
+}
+
+#custom-reboot {
+  color: $fg-good;
+}
+
+#custom-power {
+  color: $fg-warn;
+}
+
+#battery.charging {
+  color: $color10;
+}
+
+#battery.plugged {
+  color: $color10;
+}
+
+#custom-quit {
+  color: $fg-error;
+}
+
+#custom-log {
+  font-size: $font-size-small;
+  margin: 1px;
+}

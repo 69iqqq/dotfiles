@@ -1,0 +1,261 @@
+// === SOLARIZED DARK PALETTE === //
+$solarized-base03: #002b36; // background
+$solarized-base02: #073642;
+$solarized-base01: #586e75;
+$solarized-base00: #657b83;
+$solarized-base0: #839496; // foreground
+$solarized-base1: #93a1a1;
+$solarized-base2: #eee8d5;
+$solarized-base3: #fdf6e3;
+
+$solarized-yellow: #b58900;
+$solarized-orange: #cb4b16;
+$solarized-red: #dc322f;
+$solarized-magenta: #d33682;
+$solarized-violet: #6c71c4;
+$solarized-blue: #268bd2;
+$solarized-cyan: #2aa198;
+$solarized-green: #859900;
+
+// === THEME VARIABLES (SOLARIZED) === //
+$font-main: 'SF Pro', monospace;
+$font-size-base: 18px;
+$font-size-small: 15px;
+$font-size-medium: 17px;
+$font-size-large: 19px;
+$font-size-xl: 24px;
+
+$bg-main: $solarized-base03;
+$bg-alt: $solarized-base02;
+$bg-box: rgba($solarized-base0, 0.15);
+$bg-dark: $solarized-base02;
+
+$fg-primary: $solarized-base0;
+$fg-secondary: $solarized-base01;
+$fg-accent: $solarized-blue;
+$fg-good: $solarized-green;
+$fg-warn: $solarized-yellow;
+$fg-error: $solarized-red;
+$fg-cpu: $solarized-yellow;
+$fg-temp: $solarized-blue;
+$fg-launcher: $solarized-cyan;
+
+$spacing-small: 5px;
+$spacing-medium: 10px;
+$spacing-large: 15px;
+$radius: 5px;
+$box-radius: 12px;
+
+// === GLOBAL STYLES === //
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $font-main;
+  font-weight: bold;
+  font-size: $font-size-base;
+}
+
+window#waybar {
+  background-color: $bg-main;
+}
+
+// === MODULE STYLES === //
+#window {
+  margin-left: $spacing-small;
+  margin-top: 1px;
+  background-color: transparent;
+}
+
+#custom-launcher {
+  font-size: $font-size-base;
+  color: $fg-launcher;
+  padding-right: $spacing-large;
+}
+
+#cpu,
+#memory,
+#temperature {
+  font-size: $font-size-small;
+  background: $bg-dark;
+  margin: $spacing-small 0;
+}
+
+#cpu {
+  color: $fg-cpu;
+  padding: 0 $spacing-medium 0 $spacing-medium + 2;
+  border-radius: $radius 0 0 $radius;
+}
+
+#memory {
+  color: $fg-good;
+  padding: 0 $spacing-medium 0 0;
+}
+
+#temperature {
+  color: $fg-temp;
+  padding: 0 $spacing-medium + 2 0 0;
+  border-radius: 0 $radius $radius 0;
+}
+
+#custom-window-name {
+  color: $fg-accent;
+  margin-right: $spacing-medium;
+  background-color: $bg-alt;
+}
+
+#workspaces button:nth-child(1) label,
+#workspaces button:nth-child(2) label {
+  margin: 0 $spacing-small + 3;
+  background-color: $bg-alt;
+}
+
+#workspaces button:nth-child(1) label {
+  color: $fg-temp;
+}
+
+#workspaces button:nth-child(2) label {
+  color: $fg-error;
+}
+
+#box {
+  background-color: $bg-box;
+  margin: 7px 0;
+  border-radius: $box-radius;
+
+  &:nth-child(n) {
+    padding: 5px $spacing-medium $spacing-small $spacing-medium;
+  }
+
+  &:nth-child(1) {
+    padding-left: $spacing-medium;
+    padding-top: 5px;
+    padding-bottom: $spacing-small;
+  }
+}
+
+#battery,
+#pulseaudio,
+#custom-notification {
+  font-size: $font-size-large;
+  padding: 0 $spacing-small;
+  padding-left: $spacing-small;
+}
+
+#mpris {
+  font-size: $font-size-small;
+  font-weight: normal;
+  padding: 0 $spacing-medium;
+  margin: $spacing-small;
+  border-radius: $radius;
+  animation: blink 3s linear infinite alternate;
+}
+
+@keyframes blink {
+  to {
+    color: $solarized-base01;
+  }
+}
+
+#custom-update {
+  color: $fg-launcher;
+  padding-left: $spacing-small;
+  font-size: $font-size-large;
+}
+
+#custom-mic {
+  color: $fg-launcher;
+  padding-left: $spacing-small;
+  font-size: $font-size-xl;
+}
+
+#custom-timer {
+  padding-left: $spacing-small;
+  font-size: $font-size-xl;
+}
+
+#backlight {
+  color: $fg-warn;
+}
+
+#custom-notification {
+  padding-right: $spacing-small;
+}
+
+#custom-right-arr {
+  color: $fg-primary;
+  background-color: $bg-alt;
+}
+
+#network {
+  color: $fg-accent;
+}
+
+#custom-dot {
+  color: $fg-secondary;
+  padding-right: $spacing-medium;
+  background-color: $bg-alt;
+}
+
+#custom-dot-alt {
+  color: $solarized-base00;
+  padding: 0 $spacing-medium;
+}
+
+#disk {
+  color: $fg-accent;
+  background-color: $bg-alt;
+}
+
+#custom-clock-icon {
+  color: $fg-primary;
+  padding: 0 $spacing-medium;
+  margin: $spacing-small 0;
+  border-radius: $radius;
+}
+
+#custom-filler,
+#custom-filler2 {
+  color: $fg-secondary;
+  padding: 0 9px;
+  margin: $spacing-small 0;
+  border-radius: $radius;
+}
+
+#clock {
+  padding: 0 $spacing-medium;
+  font-size: $font-size-medium;
+  font-weight: normal;
+}
+
+#custom-reboot,
+#custom-power,
+#custom-quit {
+  font-size: 16px;
+  margin: $spacing-small;
+  padding: 0 3px;
+}
+
+#custom-reboot {
+  color: $fg-good;
+}
+
+#custom-power {
+  color: $fg-warn;
+}
+
+#battery.charging {
+  color: $solarized-yellow;
+}
+
+#battery.plugged {
+  color: $solarized-yellow;
+}
+
+#custom-quit {
+  color: $fg-error;
+}
+
+#custom-log {
+  font-size: $font-size-small;
+  margin: 1px;
+}

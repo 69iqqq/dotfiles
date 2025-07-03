@@ -1,0 +1,233 @@
+// Define Eldritch Color Palette
+$eldritch-sunken-depths-grey: #212337;
+$eldritch-shallow-depths-grey: #323449;
+$eldritch-lighthouse-white: #ebfafa;
+$eldritch-the-old-one-purple: #7081d0;
+$eldritch-watery-tomb-blue: #04d1f9;
+$eldritch-great-old-one-green: #37f499;
+$eldritch-dreaming-orange: #f7c67f;
+$eldritch-pustule-pink: #f265b5;
+$eldritch-lovecraft-purple: #a48cf2;
+$eldritch-rlyeh-red: #f16c75;
+$eldritch-gold-of-yuggoth: #f1fc79;
+
+// Base styles
+* {
+  padding: 0;
+  margin: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+// Waybar window and background
+window#waybar {
+  background-color: rgba(33, 35, 55, 0.9); // $eldritch-sunken-depths-grey
+}
+
+#window {
+  margin-left: 5px;
+  margin-top: 1px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+// Custom launcher style
+#custom-launcher {
+  font-size: 18px;
+  color: $eldritch-great-old-one-green;
+  padding-right: 10px;
+}
+
+// CPU, memory, temperature
+#cpu,
+#memory,
+#temperature {
+  font-size: 15px;
+  background: #2a2d45;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#cpu {
+  color: #eed49f;
+  padding: 0px 10px 0px 12px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#memory {
+  color: #a6da95;
+  padding: 0px 10px 0px 0px;
+}
+
+#temperature {
+  color: #8aadf4;
+  padding: 0px 12px 0px 0px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+// Custom window name
+#custom-window-name {
+  color: $eldritch-lovecraft-purple;
+  margin-right: 10px;
+  background-color: $eldritch-sunken-depths-grey;
+}
+
+// Pacman update icon
+#custom-pacman-update-icon {
+  background-color: $eldritch-lovecraft-purple;
+  color: #181926;
+  padding-left: 5px;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+// Workspaces
+#workspaces button:nth-child(1) label {
+  color: #8aadf4;
+  margin: 0px 8px;
+  background-color: $eldritch-sunken-depths-grey;
+}
+
+#workspaces button:nth-child(2) label {
+  color: #ed8796;
+  margin: 0px 8px;
+  background-color: $eldritch-sunken-depths-grey;
+}
+
+// Notifications
+#custom-notification {
+  color: $eldritch-lovecraft-purple;
+  border-radius: 9px 0px 0px 9px;
+  padding-right: 2px;
+  padding-left: 12px;
+}
+
+// Battery
+#battery {
+  padding-left: 10px;
+}
+
+// Pacman update icon
+#custom-pacman-update-icon {
+  color: chartreuse;
+  padding: 0px 17px 0px 0px;
+  border-radius: 0px 9px 9px 0px;
+}
+
+#custom-pacman-update-icon,
+#custom-notification,
+#battery,
+#pulseaudio,
+#backlight {
+  font-size: 16px;
+  background-color: rgba(36, 39, 59, 0.5);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+// Backlight
+#backlight {
+  color: $eldritch-dreaming-orange;
+  padding: 0px 10px 0px 5px;
+}
+
+// MPRIS
+#mpris {
+  color: $eldritch-lighthouse-white;
+  animation: repeat;
+  animation-name: blink;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  font-size: 15px;
+  font-weight: normal;
+  background: rgba(0, 0, 0, 0.8);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+  border-radius: 7px;
+}
+
+@keyframes blink {
+  to {
+    color: #262827;
+  }
+}
+
+// Pulseaudio
+#pulseaudio {
+  color: $eldritch-rlyeh-red;
+  padding: 0px 11px 0px 0px;
+}
+
+// Right arrow
+#custom-right-arr {
+  color: $eldritch-lighthouse-white;
+  background-color: $eldritch-sunken-depths-grey;
+}
+
+// Network
+#network {
+  color: $eldritch-lovecraft-purple;
+  margin-right: 10px;
+  background-color: $eldritch-sunken-depths-grey;
+}
+
+// Custom dot
+#custom-dot {
+  color: #6e738d;
+  padding-right: 10px;
+  background-color: $eldritch-sunken-depths-grey;
+}
+
+#custom-dot-alt {
+  color: #a5adcb;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+// Disk
+#disk {
+  color: $eldritch-lovecraft-purple;
+  background-color: $eldritch-sunken-depths-grey;
+}
+
+// Clock icon
+#custom-clock-icon {
+  color: $eldritch-lighthouse-white;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+// Custom filler
+#custom-filler {
+  color: #6e738d;
+  padding-left: 0px;
+  padding-right: 9px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#custom-filler2 {
+  color: #6e738d;
+  padding-left: 3px;
+  padding-right: 9px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+// Clock
+#clock {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+  font-weight: normal;
+}

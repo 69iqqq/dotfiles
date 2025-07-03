@@ -1,0 +1,195 @@
+// Catppuccin Mocha Color Palette Variables
+$catppuccin-mocha: #2c2e38;
+$catppuccin-latte: #f5e0dc;
+$catppuccin-flame: #e9b883;
+$catppuccin-frappe: #b1b7d1;
+$catppuccin-peach: #f6a878;
+$catppuccin-green: #a6d16c;
+$catppuccin-lavender: #babbf1;
+$catppuccin-rosewater: #f4dbd1;
+$catppuccin-dark-grey: #6c687e;
+$catppuccin-dark-purple: #4c3c57;
+
+// Global Styles
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'JetBrainsMono Nerd Font', monospace;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+// Window and Background Styles
+window#waybar {
+  background-color: rgba(44, 46, 56, 0.9); // Mocha
+}
+
+#window {
+  margin-left: 5px;
+  margin-top: 1px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+// Custom Launcher and Info Styles
+#custom-launcher {
+  font-size: 18px;
+  color: $catppuccin-flame; // Flame
+  padding-right: 10px;
+}
+
+#cpu,
+#memory,
+#temperature {
+  font-size: 15px;
+  background: $catppuccin-mocha; // Mocha
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#cpu {
+  color: $catppuccin-flame; // Flame
+  padding: 0px 10px 0px 12px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#memory {
+  color: $catppuccin-green; // Green
+  padding: 0px 10px 0px 0px;
+}
+
+#temperature {
+  color: $catppuccin-lavender; // Lavender
+  padding: 0px 12px 0px 0px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+// Window Name and Button Styles
+#custom-window-name {
+  color: $catppuccin-frappe; // Frappe
+  margin-right: 10px;
+  background-color: $catppuccin-dark-purple; // Dark Purple
+}
+
+#workspaces button:nth-child(1) label {
+  color: $catppuccin-lavender; // Lavender
+  margin: 0px 8px;
+  background-color: $catppuccin-dark-purple; // Dark Purple
+}
+
+#workspaces button:nth-child(2) label {
+  color: $catppuccin-peach; // Peach
+  margin: 0px 8px;
+  background-color: $catppuccin-dark-purple; // Dark Purple
+}
+
+// Box Style
+#box {
+  background-color: #3C3E4E;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  border: 2.5px solid $catppuccin-dark-grey; // Dark Grey
+}
+
+// Mpris Animation and Style
+#mpris {
+  color: $catppuccin-latte; // Latte
+  animation: blink 3s linear infinite alternate;
+  font-size: 15px;
+  font-weight: normal;
+  background: rgba(0, 0, 0, 0.8);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+  border-radius: 7px;
+}
+
+@keyframes blink {
+  to {
+    color: $catppuccin-mocha; // Mocha
+  }
+}
+
+// Icon and Miscellaneous Styles
+#battery,
+#pulseaudio,
+#backlight {
+  font-size: 20px;
+  padding: 0 5px;
+}
+
+#custom-pacman-update-icon {
+  color: $catppuccin-flame; // Flame
+  padding-left: 5px;
+  font-size: 20px;
+}
+
+#backlight {
+  color: $catppuccin-flame; // Flame
+}
+
+#custom-notification {
+  color: $catppuccin-rosewater; // Rosewater
+  padding-right: 5px;
+  font-size: 20px;
+}
+
+#pulseaudio {
+  color: $catppuccin-peach; // Peach
+}
+
+#custom-right-arr {
+  color: $catppuccin-latte; // Latte
+  background-color: $catppuccin-dark-purple; // Dark Purple
+}
+
+#network {
+  color: $catppuccin-rosewater; // Rosewater
+  margin-right: 10px;
+  background-color: $catppuccin-dark-purple; // Dark Purple
+}
+
+#custom-dot {
+  color: $catppuccin-dark-grey; // Dark Grey
+  padding-right: 10px;
+  background-color: $catppuccin-dark-purple; // Dark Purple
+}
+
+#custom-dot-alt {
+  color: $catppuccin-dark-grey; // Dark Grey
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#disk {
+  color: $catppuccin-rosewater; // Rosewater
+  background-color: $catppuccin-dark-purple; // Dark Purple
+}
+
+#custom-clock-icon {
+  color: $catppuccin-latte; // Latte
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#custom-filler,
+#custom-filler2 {
+  color: $catppuccin-dark-grey; // Dark Grey
+  padding-left: 0px;
+  padding-right: 9px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#clock {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+  font-weight: normal;
+}

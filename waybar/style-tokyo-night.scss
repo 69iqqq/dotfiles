@@ -1,0 +1,235 @@
+// Tokyo Night Color Palette
+$tokyo-night-dark: #1a1b26;
+$tokyo-night-sidebar-dark: #16161e;
+$tokyo-night-light-blue: #7aa2f7;
+$tokyo-night-green: #9ece6a;
+$tokyo-night-red: #f7768e;
+$tokyo-night-yellow: #e0af68;
+$tokyo-night-light-purple: #c0caf5;
+$tokyo-night-soft-white: #d9e0ee;
+
+// Base styles
+* {
+  padding: 0;
+  margin: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+// Waybar window and background
+window#waybar {
+  background-color: rgba(26, 27, 38, 0.9); // $tokyo-night-dark
+}
+
+#window {
+  margin-left: 5px;
+  margin-top: 1px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+// Custom launcher style
+#custom-launcher {
+  font-size: 18px;
+  color: $tokyo-night-green;
+  padding-right: 10px;
+}
+
+// CPU, memory, temperature
+#cpu,
+#memory,
+#temperature {
+  font-size: 15px;
+  background: #2a2d45;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#cpu {
+  color: $tokyo-night-yellow;
+  padding: 0px 10px 0px 12px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#memory {
+  color: $tokyo-night-green;
+  padding: 0px 10px 0px 0px;
+}
+
+#temperature {
+  color: $tokyo-night-light-blue;
+  padding: 0px 12px 0px 0px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+// Custom window name
+#custom-window-name {
+  color: $tokyo-night-light-purple;
+  margin-right: 10px;
+  background-color: $tokyo-night-dark;
+}
+
+// Pacman update icon
+#custom-pacman-update-icon {
+  background-color: $tokyo-night-light-purple;
+  color: $tokyo-night-dark;
+  padding-left: 5px;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+// Workspaces
+#workspaces button:nth-child(1) label {
+  color: $tokyo-night-light-blue;
+  margin: 0px 8px;
+  background-color: $tokyo-night-dark;
+}
+
+#workspaces button:nth-child(2) label {
+  color: $tokyo-night-red;
+  margin: 0px 8px;
+  background-color: $tokyo-night-dark;
+}
+
+// Notifications
+#custom-notification {
+  color: $tokyo-night-light-purple;
+  border-radius: 9px 0px 0px 9px;
+  padding-right: 5px;
+  padding-left: 12px;
+  border-left: 2.5px solid #45495D;
+}
+
+// Battery
+#battery {
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+// Pacman update icon
+#custom-pacman-update-icon {
+  color: chartreuse;
+  padding: 0px 20px 0px 0px;
+  border-radius: 0px 9px 9px 0px;
+  border-right: 2.5px solid #45495D;
+}
+
+#custom-pacman-update-icon,
+#custom-notification,
+#battery,
+#pulseaudio,
+#backlight {
+  font-size: 18px;
+  background-color: #3C3E4E;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom: 2.5px solid #45495D;
+  border-top: 2.5px solid #45495D;
+}
+
+// Backlight
+#backlight {
+  color: $tokyo-night-yellow;
+  padding: 0px 15px 0px 5px;
+}
+
+// MPRIS
+#mpris {
+  color: $tokyo-night-soft-white;
+  animation: repeat;
+  animation-name: blink;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  font-size: 15px;
+  font-weight: normal;
+  background: rgba(0, 0, 0, 0.8);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+  border-radius: 7px;
+}
+
+@keyframes blink {
+  to {
+    color: #262827;
+  }
+}
+
+// Pulseaudio
+#pulseaudio {
+  color: $tokyo-night-red;
+  padding: 0px 15px 0px 0px;
+}
+
+// Right arrow
+#custom-right-arr {
+  color: $tokyo-night-soft-white;
+  background-color: $tokyo-night-dark;
+}
+
+// Network
+#network {
+  color: $tokyo-night-light-purple;
+  margin-right: 10px;
+  background-color: $tokyo-night-dark;
+}
+
+// Custom dot
+#custom-dot {
+  color: #6e738d;
+  padding-right: 10px;
+  background-color: $tokyo-night-dark;
+}
+
+#custom-dot-alt {
+  color: #a5adcb;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+// Disk
+#disk {
+  color: $tokyo-night-light-purple;
+  background-color: $tokyo-night-dark;
+}
+
+// Clock icon
+#custom-clock-icon {
+  color: $tokyo-night-soft-white;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+// Custom filler
+#custom-filler {
+  color: #6e738d;
+  padding-left: 0px;
+  padding-right: 9px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+#custom-filler2 {
+  color: #6e738d;
+  padding-left: 3px;
+  padding-right: 9px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+// Clock
+#clock {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+  font-weight: normal;
+}
