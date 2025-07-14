@@ -10,7 +10,7 @@ $solarized-base3: #fdf6e3;
 
 $solarized-yellow: #b58900;
 $solarized-orange: #cb4b16;
-$solarized-red: #dc322f;
+$solarized-red: rgba(220, 50, 47, 0.8);
 $solarized-magenta: #d33682;
 $solarized-violet: #6c71c4;
 $solarized-blue: #268bd2;
@@ -18,7 +18,7 @@ $solarized-cyan: #2aa198;
 $solarized-green: #859900;
 
 // === THEME VARIABLES (SOLARIZED) === //
-$font-main: 'SF Pro', monospace;
+$font-main: 'SF Pro Text';
 $font-size-base: 18px;
 $font-size-small: 15px;
 $font-size-medium: 17px;
@@ -36,7 +36,7 @@ $fg-accent: $solarized-blue;
 $fg-good: $solarized-green;
 $fg-warn: $solarized-yellow;
 $fg-error: $solarized-red;
-$fg-cpu: $solarized-yellow;
+$fg-cpu: $solarized-red;
 $fg-temp: $solarized-blue;
 $fg-launcher: $solarized-cyan;
 
@@ -53,6 +53,7 @@ $box-radius: 12px;
   font-family: $font-main;
   font-weight: bold;
   font-size: $font-size-base;
+  color: $solarized-base1;
 }
 
 window#waybar {
@@ -68,7 +69,8 @@ window#waybar {
 
 #custom-launcher {
   font-size: $font-size-base;
-  color: $fg-launcher;
+  // color: $fg-launcher;
+  color: $solarized-yellow;
   padding-right: $spacing-large;
 }
 
@@ -76,11 +78,11 @@ window#waybar {
 #memory,
 #temperature {
   font-size: $font-size-small;
-  background: $bg-dark;
-  margin: $spacing-small 0;
+  margin-bottom: -20px;
 }
 
 #cpu {
+  // color: #ffffff;
   color: $fg-cpu;
   padding: 0 $spacing-medium 0 $spacing-medium + 2;
   border-radius: $radius 0 0 $radius;
@@ -103,18 +105,14 @@ window#waybar {
   background-color: $bg-alt;
 }
 
-#workspaces button:nth-child(1) label,
-#workspaces button:nth-child(2) label {
-  margin: 0 $spacing-small + 3;
-  background-color: $bg-alt;
+#workspaces {
+  margin-left: 7px;
 }
 
-#workspaces button:nth-child(1) label {
-  color: $fg-temp;
-}
-
-#workspaces button:nth-child(2) label {
-  color: $fg-error;
+#workspaces button {
+  all: initial;
+  padding: 2px 6px;
+  margin-right: 3px;
 }
 
 #box {
@@ -123,21 +121,23 @@ window#waybar {
   border-radius: $box-radius;
 
   &:nth-child(n) {
-    padding: 5px $spacing-medium $spacing-small $spacing-medium;
+    // padding: 5px $spacing-medium $spacing-small $spacing-medium;
   }
 
   &:nth-child(1) {
-    padding-left: $spacing-medium;
-    padding-top: 5px;
-    padding-bottom: $spacing-small;
+    // padding-left: $spacing-medium;
+    // padding-top: 5px;
+    // padding-bottom: $spacing-small;
   }
 }
 
 #battery,
 #pulseaudio,
+#custom-audio,
+#network,
 #custom-notification {
   font-size: $font-size-large;
-  padding: 0 $spacing-small;
+  // padding: 0 $spacing-small;
   padding-left: $spacing-small;
 }
 
@@ -187,7 +187,7 @@ window#waybar {
 }
 
 #network {
-  color: $fg-accent;
+  // color: $fg-accent;
 }
 
 #custom-dot {
@@ -244,11 +244,11 @@ window#waybar {
 }
 
 #battery.charging {
-  color: $solarized-yellow;
+  color: $solarized-cyan;
 }
 
 #battery.plugged {
-  color: $solarized-yellow;
+  color: $solarized-cyan;
 }
 
 #custom-quit {
@@ -258,4 +258,38 @@ window#waybar {
 #custom-log {
   font-size: $font-size-small;
   margin: 1px;
+}
+
+menu {
+  border-radius: 10px;
+  background: $solarized-base03;
+  font-weight: bold;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  border: none;
+  box-shadow: none;
+  color: $solarized-yellow;
+}
+
+#pulseaudio-slider trough {
+  min-height: 8px;
+  min-width: 100px;
+  border-radius: 10px;
+  // background-color: black;
+  margin-right: 5px;
+  color: $solarized-yellow;
+  border: none;
+
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: $solarized-yellow;
+  color: $solarized-yellow;
 }
