@@ -1,0 +1,40 @@
+
+* {
+    font: "JetBrainsMono Nerd Font 9";
+
+    background:            #171928;   /* *.background */
+    background-alt:        #212337;   /* Slightly lighter alt bg */
+    foreground:            #ABB4DA66;   /* *.foreground */
+
+    // selected:              #3B4261;   /* highlightBackground */
+    selected:              #F16C7566;   /* highlightBackground */
+    active:                #04D1F9;   /* cyan-ish accent */
+    urgent:                #F16C75;   /* alert red/pink */
+
+    border-colour:         #212337;   /* soft border */
+    handle-colour:         @foreground;
+    background-colour:     @background;
+    foreground-colour:     @foreground;
+
+    alternate-background:        @background-alt;
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    urgent-background:           @urgent;
+    urgent-foreground:           @background;
+    active-background:           @active;
+    active-foreground:           @background;
+
+    selected-normal-background:  @selected;
+    selected-normal-foreground:  @foreground;
+    selected-urgent-background:  @active;
+    selected-urgent-foreground:  @background;
+    selected-active-background:  @urgent;
+    selected-active-foreground:  @background;
+
+    alternate-normal-background: @background-alt;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @urgent;
+    alternate-urgent-foreground: @background;
+    alternate-active-background: @active;
+    alternate-active-foreground: @background;
+}

@@ -1,0 +1,39 @@
+
+* {
+    font: "JetBrainsMono Nerd Font 9";
+
+    background:            #2b3339;   /* bg0 (darkest) */
+    background-alt:        #323c41; /* bg1 with alpha */
+    foreground:            #d3c6aa99; /* fg (normal text) with alpha */
+
+    selected:              #e67e8066; /* aqua (selected bg) */
+    active:                #83c092;   /* green (active) */
+    urgent:                #e67e80;   /* red (urgent) */
+
+    border-colour:         #323c41;   /* bg1 */
+    handle-colour:         @foreground;
+    background-colour:     @background;
+    foreground-colour:     @foreground;
+
+    alternate-background:        @background-alt;
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    urgent-background:           @urgent;
+    urgent-foreground:           @background;
+    active-background:           @active;
+    active-foreground:           @background;
+
+    selected-normal-background:  @selected;
+    selected-normal-foreground:  @foreground;
+    selected-urgent-background:  @active;
+    selected-urgent-foreground:  @background;
+    selected-active-background:  @urgent;
+    selected-active-foreground:  @background;
+
+    alternate-normal-background: @background-alt;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @urgent;
+    alternate-urgent-foreground: @background;
+    alternate-active-background: @active;
+    alternate-active-foreground: @background;
+}

@@ -1,0 +1,97 @@
+/**
+ * Modified for: Screenshot Grid Menu with Large Icons
+ * Author: ReApEr AL
+ **/
+
+@import "themes/shared.rasi"
+
+configuration {
+    modi:                       "drun,run";
+    show-icons:                 false;
+    icon-theme:                 "McMojave-circle-dark";
+    display-drun:               " ";
+    display-run:                "";
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    north;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       400px;
+    x-offset:                    0px;
+    y-offset:                    100px;
+
+    border-radius:               10px;
+    border:                      2px solid;
+    border-color:                @border-colour;
+    background-color:            @background-colour;
+    padding:                     20px;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    spacing:                     20px;
+    padding:                     20px;
+    background-color:            transparent;
+    children:                    [ "message", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    spacing:                     10px;
+    background-color:            @background-alt;
+    text-color:                  @foreground-colour;
+    padding:                     10px;
+    children:                    [ "prompt", "entry" ];
+}
+
+/*****----- Listview (Grid with 2 Columns) -----*****/
+listview {
+    lines:                       1;
+    columns:                     2;
+    cycle:                       true;
+    dynamic:                     true;
+    spacing:                     20px;
+    layout:                      vertical;
+    fixed-height:                true;
+    fixed-columns:               true;
+    background-color:            transparent;
+}
+
+/*****----- Elements -----*****/
+element {
+    spacing:                     10px;
+    padding:                     20px;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    border-radius:               6px;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}
+element selected.normal {
+    background-color:            var(selected-normal-background);
+    text-color:                  var(selected-normal-foreground);
+}
+
+/*****----- Text/Icon Style -----*****/
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    expand:                      true;
+    font:                        "JetBrainsMono Nerd Font 22";
+}
+
+/*****----- Message -----*****/
+message, textbox, error-message {
+    padding:                     8px;
+    background-color:            @alternate-background;
+    text-color:                  @foreground-colour;
+}

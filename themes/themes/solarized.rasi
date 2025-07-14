@@ -1,0 +1,38 @@
+
+* {
+    font: "JetBrainsMono Nerd Font 9";
+
+    background:            #002B36FF;
+    background-alt:        #073642FF;
+    foreground:             #EEE8D566;
+    selected:              #DC322F66; /* Solarized Red */
+    active:                #2AA198FF;  /* Solarized Cyan */
+    urgent:                #CB4B16FF;  /* Solarized Orange */
+    border-colour:        #4C767666;
+    handle-colour:         @foreground;
+    background-colour:     @background;
+    foreground-colour:     @foreground;
+
+    alternate-background:        @background-alt;
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    urgent-background:           @urgent;
+    urgent-foreground:           @background;
+    active-background:           @active;
+    active-foreground:           @background;
+
+    selected-normal-background:  @selected;
+    selected-normal-foreground:  @background;
+    selected-urgent-background:  @active;
+    selected-urgent-foreground:  @background;
+    selected-active-background:  @urgent;
+    selected-active-foreground:  @background;
+
+    alternate-normal-background: @background-alt;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @urgent;
+    alternate-urgent-foreground: @background;
+    alternate-active-background: @active;
+    alternate-active-foreground: @background;
+}
+

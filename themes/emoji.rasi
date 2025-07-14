@@ -1,0 +1,153 @@
+
+/**
+ *
+ * Author : Modified by ReApEr AL
+ * Base: Aditya Shakya (adi1090x)
+ * Theme: Solarized Dark + Icons + Solarized Red Selection
+ * Font: JetBrainsMono Nerd Font
+ * Rofi Version: 1.7.3
+ **/
+
+/*****----- Hardcoded Colors & Font -----*****/
+@import "themes/shared.rasi"
+// @import "themes/eldritch.rasi"
+/*****----- Configuration -----*****/
+configuration {
+    modi:                       "drun,run";
+    show-icons:                 false;
+    icon-theme: "McMojave-circle-dark";
+    display-drun:               " ";
+    display-run:                "";
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    north;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       460px;
+    x-offset:                    0px;
+    y-offset:                    150px;
+
+    border-radius:               2px;
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     10 0 10 0px;
+    border:                      1px solid;
+    border-color:                @border-colour;
+    cursor:                      "default";
+    
+    background-color:            @background-colour;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    spacing:                     10px;
+    padding:                     30px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "message", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    spacing:         10px;
+    background-color: @background-alt;
+    text-color:      @foreground-colour;
+    padding:         8px;
+    box-shadow:      #000000;  // subtle shadow
+    children:        [ "prompt", "entry" ];
+}
+prompt, textbox-prompt-colon, entry, num-filtered-rows, textbox-num-sep, num-rows, case-indicator {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+entry {
+    cursor:                      text;
+    placeholder:                 "Emojis";
+    placeholder-color:           @foreground;
+}
+
+/*****----- Listview -----*****/
+listview {
+    lines:                       6;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     3px;
+    background-color:            transparent;
+}
+
+/*****----- Elements -----*****/
+element {
+    spacing:                     4px;
+    padding:                     8px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            var(normal-background);
+    text-color:                  var(normal-foreground);
+}
+element normal.urgent {
+    background-color:            var(urgent-background);
+    text-color:                  var(urgent-foreground);
+}
+element normal.active {
+    background-color:            var(active-background);
+    text-color:                  var(active-foreground);
+}
+element selected.normal {
+    background-color:            var(selected-normal-background);
+    // text-color:                  var(selected-normal-foreground);
+}
+element selected.urgent {
+    background-color:            var(selected-urgent-background);
+//     text-color:                  var(selected-urgent-foreground);
+}
+element selected.active {
+    background-color:            var(selected-active-background);
+    // text-color:                  var(selected-active-foreground);
+}
+
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Mode Switcher -----*****/
+mode-switcher {
+    spacing:                     10px;
+    background-color:            transparent;
+    text-color:                  @foreground-colour;
+}
+button {
+    padding:                     6px;
+    background-color:            @alternate-background;
+}
+button selected {
+    background-color:            var(normal-foreground);
+    text-color:                  var(normal-background);
+}
+
+/*****----- Message -----*****/
+message, textbox, error-message {
+    padding:                     8px;
+    background-color:            @alternate-background;
+    text-color:                  @foreground-colour;
+}
+textbox {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
+    markup:                      true;
+    blink:                       true;
+}
