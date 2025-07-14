@@ -1,195 +1,296 @@
-// Catppuccin Mocha Color Palette Variables
-$catppuccin-mocha: #2c2e38;
-$catppuccin-latte: #f5e0dc;
-$catppuccin-flame: #e9b883;
-$catppuccin-frappe: #b1b7d1;
-$catppuccin-peach: #f6a878;
-$catppuccin-green: #a6d16c;
-$catppuccin-lavender: #babbf1;
-$catppuccin-rosewater: #f4dbd1;
-$catppuccin-dark-grey: #6c687e;
-$catppuccin-dark-purple: #4c3c57;
+// === CATPPUCCIN MOCHA PALETTE VARIABLES ===
+$ctp-base: #1e1e2e;
+$ctp-mantle: #181825;
+$ctp-crust: #11111b;
 
-// Global Styles
+$ctp-text: #cdd6f4;
+$ctp-subtext1: #bac2de;
+$ctp-subtext0: #a6adc8;
+
+$ctp-overlay2: #9399b2;
+$ctp-overlay1: #7f849c;
+$ctp-overlay0: #6c7086;
+
+$ctp-surface2: #585b70;
+$ctp-surface1: #45475a;
+$ctp-surface0: #313244;
+
+$ctp-rosewater: #f5e0dc;
+$ctp-flamingo: #f2cdcd;
+$ctp-pink: #f5c2e7;
+$ctp-mauve: #cba6f7;
+$ctp-red: #f38ba8;
+$ctp-maroon: #eba0ac;
+$ctp-peach: #fab387;
+$ctp-yellow: #f9e2af;
+$ctp-green: #a6e3a1;
+$ctp-teal: #94e2d5;
+$ctp-sky: #89dceb;
+$ctp-sapphire: #74c7ec;
+$ctp-blue: #89b4fa;
+$ctp-lavender: #b4befe;
+
+// === THEME VARIABLES (Catppuccin) ===
+$font-main: 'SF Pro Text';
+$font-size-base: 18px;
+$font-size-small: 15px;
+$font-size-medium: 17px;
+$font-size-large: 19px;
+$font-size-xl: 24px;
+
+$bg-main: $ctp-base;
+$bg-alt: $ctp-surface0;
+$bg-box: rgba($ctp-text, 0.15);
+$bg-dark: $ctp-surface0;
+
+$fg-primary: $ctp-text;
+$fg-secondary: $ctp-subtext1;
+$fg-accent: $ctp-blue;
+$fg-good: $ctp-green;
+$fg-warn: $ctp-yellow;
+$fg-error: $ctp-red;
+$fg-cpu: $ctp-red;
+$fg-temp: $ctp-blue;
+$fg-launcher: $ctp-teal;
+
+$spacing-small: 5px;
+$spacing-medium: 10px;
+$spacing-large: 15px;
+$radius: 5px;
+$box-radius: 12px;
+
+// === GLOBAL STYLES ===
 * {
   padding: 0;
   margin: 0;
-  font-family: 'JetBrainsMono Nerd Font', monospace;
+  font-family: $font-main;
   font-weight: bold;
-  font-size: 16px;
+  font-size: $font-size-base;
+  color: $ctp-subtext0;
 }
 
-// Window and Background Styles
 window#waybar {
-  background-color: rgba(44, 46, 56, 0.9); // Mocha
+  background-color: $bg-main;
 }
 
+// === MODULE STYLES ===
 #window {
-  margin-left: 5px;
+  margin-left: $spacing-small;
   margin-top: 1px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
-// Custom Launcher and Info Styles
 #custom-launcher {
-  font-size: 18px;
-  color: $catppuccin-flame; // Flame
-  padding-right: 10px;
+  font-size: $font-size-base;
+  color: #f38ba8;
+  padding-right: $spacing-large;
 }
 
 #cpu,
 #memory,
 #temperature {
-  font-size: 15px;
-  background: $catppuccin-mocha; // Mocha
-  margin-top: 5px;
-  margin-bottom: 5px;
+  font-size: $font-size-small;
+  margin-bottom: -20px;
 }
 
 #cpu {
-  color: $catppuccin-flame; // Flame
-  padding: 0px 10px 0px 12px;
-  border-radius: 5px 0px 0px 5px;
+  color: $fg-cpu;
+  padding: 0 $spacing-medium 0 ($spacing-medium + 2);
+  border-radius: $radius 0 0 $radius;
 }
 
 #memory {
-  color: $catppuccin-green; // Green
-  padding: 0px 10px 0px 0px;
+  color: $fg-good;
+  padding: 0 $spacing-medium 0 0;
 }
 
 #temperature {
-  color: $catppuccin-lavender; // Lavender
-  padding: 0px 12px 0px 0px;
-  border-radius: 0px 5px 5px 0px;
+  color: $fg-temp;
+  padding: 0 ($spacing-medium + 2) 0 0;
+  border-radius: 0 $radius $radius 0;
 }
 
-// Window Name and Button Styles
 #custom-window-name {
-  color: $catppuccin-frappe; // Frappe
-  margin-right: 10px;
-  background-color: $catppuccin-dark-purple; // Dark Purple
+  color: $fg-accent;
+  margin-right: $spacing-medium;
+  background-color: $bg-alt;
 }
 
-#workspaces button:nth-child(1) label {
-  color: $catppuccin-lavender; // Lavender
-  margin: 0px 8px;
-  background-color: $catppuccin-dark-purple; // Dark Purple
+#workspaces {
+  margin-left: 7px;
 }
 
-#workspaces button:nth-child(2) label {
-  color: $catppuccin-peach; // Peach
-  margin: 0px 8px;
-  background-color: $catppuccin-dark-purple; // Dark Purple
+#workspaces button {
+  all: initial;
+  padding: 2px 6px;
+  margin-right: 3px;
 }
 
-// Box Style
 #box {
-  background-color: #3C3E4E;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 10px;
-  border: 2.5px solid $catppuccin-dark-grey; // Dark Grey
+  background-color: $bg-box;
+  margin: 7px 0;
+  border-radius: $box-radius;
+
+  &:nth-child(n) {
+    padding: 5px $spacing-medium $spacing-small $spacing-medium;
+  }
+
+  &:nth-child(1) {
+    padding-left: $spacing-medium;
+    padding-top: 5px;
+    padding-bottom: $spacing-small;
+  }
 }
 
-// Mpris Animation and Style
+#battery,
+#pulseaudio,
+#custom-notification {
+  font-size: $font-size-large;
+  padding: 0 $spacing-small;
+  padding-left: $spacing-small;
+}
+
 #mpris {
-  color: $catppuccin-latte; // Latte
-  animation: blink 3s linear infinite alternate;
-  font-size: 15px;
+  font-size: $font-size-small;
   font-weight: normal;
-  background: rgba(0, 0, 0, 0.8);
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 5px;
-  border-radius: 7px;
+  padding: 0 $spacing-medium;
+  margin: $spacing-small;
+  border-radius: $radius;
+  animation: blink 3s linear infinite alternate;
 }
 
 @keyframes blink {
   to {
-    color: $catppuccin-mocha; // Mocha
+    color: $ctp-overlay0;
   }
 }
 
-// Icon and Miscellaneous Styles
-#battery,
-#pulseaudio,
-#backlight {
-  font-size: 20px;
-  padding: 0 5px;
+#custom-update {
+  color: $fg-launcher;
+  padding-left: $spacing-small;
+  font-size: $font-size-large;
 }
 
-#custom-pacman-update-icon {
-  color: $catppuccin-flame; // Flame
-  padding-left: 5px;
-  font-size: 20px;
+#custom-mic {
+  color: $fg-launcher;
+  padding-left: $spacing-small;
+  font-size: $font-size-xl;
+}
+
+#custom-timer {
+  padding-left: $spacing-small;
+  font-size: $font-size-xl;
 }
 
 #backlight {
-  color: $catppuccin-flame; // Flame
+  color: $fg-warn;
 }
 
 #custom-notification {
-  color: $catppuccin-rosewater; // Rosewater
-  padding-right: 5px;
-  font-size: 20px;
-}
-
-#pulseaudio {
-  color: $catppuccin-peach; // Peach
+  padding-right: $spacing-small;
 }
 
 #custom-right-arr {
-  color: $catppuccin-latte; // Latte
-  background-color: $catppuccin-dark-purple; // Dark Purple
+  color: $fg-primary;
+  background-color: $bg-alt;
 }
 
-#network {
-  color: $catppuccin-rosewater; // Rosewater
-  margin-right: 10px;
-  background-color: $catppuccin-dark-purple; // Dark Purple
-}
+#network {}
 
 #custom-dot {
-  color: $catppuccin-dark-grey; // Dark Grey
-  padding-right: 10px;
-  background-color: $catppuccin-dark-purple; // Dark Purple
+  color: $fg-secondary;
+  padding-right: $spacing-medium;
+  background-color: $bg-alt;
 }
 
 #custom-dot-alt {
-  color: $catppuccin-dark-grey; // Dark Grey
-  padding-left: 10px;
-  padding-right: 10px;
+  color: $ctp-subtext0;
+  padding: 0 $spacing-medium;
 }
 
 #disk {
-  color: $catppuccin-rosewater; // Rosewater
-  background-color: $catppuccin-dark-purple; // Dark Purple
+  color: $fg-accent;
+  background-color: $bg-alt;
 }
 
 #custom-clock-icon {
-  color: $catppuccin-latte; // Latte
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 5px;
+  color: $fg-primary;
+  padding: 0 $spacing-medium;
+  margin: $spacing-small 0;
+  border-radius: $radius;
 }
 
 #custom-filler,
 #custom-filler2 {
-  color: $catppuccin-dark-grey; // Dark Grey
-  padding-left: 0px;
-  padding-right: 9px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 5px;
+  color: $fg-secondary;
+  padding: 0 9px;
+  margin: $spacing-small 0;
+  border-radius: $radius;
 }
 
 #clock {
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 13px;
+  padding: 0 $spacing-medium;
+  font-size: $font-size-medium;
   font-weight: normal;
+}
+
+#custom-reboot,
+#custom-power,
+#custom-quit {
+  font-size: 16px;
+  margin: $spacing-small;
+  padding: 0 3px;
+}
+
+#custom-reboot {
+  color: $fg-good;
+}
+
+#custom-power {
+  color: $fg-warn;
+}
+
+#battery.charging {
+  color: $ctp-teal;
+}
+
+#custom-quit {
+  color: $fg-error;
+}
+
+#custom-log {
+  font-size: $font-size-small;
+  margin: 1px;
+}
+
+menu {
+  border-radius: 10px;
+  background: $ctp-base;
+  font-weight: bold;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0;
+  min-width: 0;
+  opacity: 0;
+  border: none;
+  box-shadow: none;
+  color: $ctp-yellow;
+}
+
+#pulseaudio-slider trough {
+  min-height: 8px;
+  min-width: 100px;
+  border-radius: 10px;
+  margin-right: 5px;
+  color: $ctp-yellow;
+  border: none;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: $ctp-yellow;
+  color: $ctp-yellow;
 }
