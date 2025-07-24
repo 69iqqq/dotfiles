@@ -1,0 +1,342 @@
+// ┏┓┏┓┳┓┏┳┓┳┓┏┓┓   ┏┓┏┓┳┓┏┳┓┏┓┳┓
+// ┃ ┃┃┃┃ ┃ ┣┫┃┃┃ ━━┃ ┣ ┃┃ ┃ ┣ ┣┫
+// ┗┛┗┛┛┗ ┻ ┛┗┗┛┗┛  ┗┛┗┛┛┗ ┻ ┗┛┛┗
+
+// === GRAPHITE MONOCHROME PALETTE === //
+$graphite-darkest: #121212;
+$graphite-darker: #1e1e1e;
+$graphite-dark: #2a2a2a;
+$graphite-mid: #3a3a3a;
+$graphite-light: #5a5a5a;
+$graphite-lighter: #7a7a7a;
+$graphite-lightest: #bfbfbf;
+$graphite-white: #e0e0e0;
+
+$accent: #9e9e9e;
+
+// === Custom Mapping === //
+$background: $graphite-darkest;
+$background-alt: $graphite-darker;
+$background-sec: $graphite-dark;
+$text: $graphite-lightest;
+$text-alt: $graphite-lighter;
+$text-disabled: $graphite-light;
+$selected: $accent;
+$hover: rgba($selected, 0.45);
+$urgent: #f16c75;
+
+$alt-alpha: rgba($text-alt, 0.55);
+$sec-alpha: rgba($background-alt, 0.55);
+$font-family: "SF Pro Nerd Font";
+$font-size: 16px;
+
+// === Global Styles === //
+* {
+  all: unset;
+  color: $text;
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: bold;
+  transition: 200ms;
+}
+
+.blank-window {
+  background: transparent;
+}
+
+// === Notification Styles === //
+.floating-notifications.background .notification-row {
+  margin: 10px 0;
+}
+
+.notification-row {
+  color: $text;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+.notification-background {
+  background: $background;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  border-radius: 24px;
+  padding: 0;
+  margin: 0 12px;
+}
+
+.notification {
+  padding: 6px;
+  border-radius: 12px;
+
+  &.critical {
+    border: 2px solid $urgent;
+    color: $urgent;
+  }
+
+  .notification-content {
+    margin: 14px;
+  }
+
+  >*:last-child>* {
+    min-height: 3.4em;
+
+    .notification-action {
+      border-radius: 8px;
+      background-color: $alt-alpha;
+      margin: 6px;
+      border: 1px solid transparent;
+
+      &:hover {
+        background-color: $hover;
+        border: 1px solid $selected;
+      }
+
+      &:active {
+        background-color: $selected;
+        color: $background;
+      }
+    }
+  }
+}
+
+.close-button {
+  margin: 6px;
+  padding: 2px;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid transparent;
+
+  &:hover,
+  &:active {
+    background-color: $selected;
+    color: $background;
+  }
+}
+
+.notification.low progress,
+.notification.normal progress,
+.notification.critical progress {
+  background-color: $selected;
+}
+
+.image {
+  margin: 10px 20px 10px 0;
+}
+
+.summary {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.body {
+  font-size: 0.8rem;
+}
+
+// === Control Center === //
+.control-center {
+  background: $background;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  margin: 18px;
+  padding: 12px;
+
+  .notification-row {
+    .notification-background {
+      background-color: rgba($accent, 0.55);
+      border-radius: 16px;
+      margin: 4px 0;
+      padding: 4px;
+
+      .notification-content {
+        margin: 6px;
+        padding: 8px 6px 2px 2px;
+      }
+
+      .notification {
+        >*:last-child>* {
+          min-height: 3.4em;
+
+          .notification-action {
+            background: rgba($selected, 0.6);
+            color: $text;
+            border-radius: 12px;
+            margin: 6px;
+
+            &:hover {
+              background: $selected;
+            }
+
+            &:active {
+              background-color: $selected;
+            }
+          }
+        }
+
+        .close-button {
+          background: transparent;
+          border-radius: 6px;
+          color: $text;
+          margin: 0;
+          padding: 4px;
+
+          &:hover,
+          &:active {
+            background-color: $selected;
+            color: $text-alt;
+          }
+        }
+      }
+    }
+  }
+}
+
+.notification-group {
+  margin: 2px 8px;
+
+  &-headers {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: $text;
+    letter-spacing: 2px;
+  }
+
+  &-icon {
+    color: $text;
+  }
+
+  &-collapse-button,
+  &-close-all-button {
+    background: transparent;
+    color: $text;
+    margin: 4px;
+    border-radius: 6px;
+    padding: 4px;
+
+    &:hover {
+      background: $hover;
+    }
+  }
+}
+
+// === Widgets === //
+.widget-label {
+  margin: 6px 6px 6px 105px;
+}
+
+.widget-title {
+  color: $text;
+  font-size: 1.2em;
+  margin: 6px;
+
+  button {
+    background: $background-alt;
+    border-radius: 6px;
+    padding: 4px 16px;
+
+    &:hover {
+      background-color: $hover;
+    }
+
+    &:active {
+      background-color: $selected;
+    }
+  }
+}
+
+.widget-dnd {
+  color: $text;
+  margin: 6px;
+  font-size: 1.2rem;
+
+  >switch {
+    background: $background-alt;
+    font-size: initial;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 2px;
+
+    &:hover {
+      background: $hover;
+    }
+
+    &:checked {
+      background: $selected;
+
+      &:hover {
+        background: $hover;
+      }
+    }
+
+    slider {
+      background: $text;
+      border-radius: 6px;
+    }
+  }
+}
+
+.widget-buttons-grid {
+  font-size: x-large;
+  padding: 6px 2px;
+  margin: 6px;
+  border-radius: 12px;
+  background: $background-alt;
+  color: $text;
+
+  flowbox>flowboxchild>button {
+    margin: 4px 10px;
+    padding: 6px 12px;
+    background: transparent;
+    border-radius: 8px;
+
+    &:hover {
+      background: $hover;
+    }
+
+    &.toggle:checked {
+      background: $hover;
+
+      label {
+        color: $text-alt;
+      }
+    }
+  }
+}
+
+// === Music Player === //
+.widget-mpris {
+  background: rgba($selected, 0.2);
+  border-radius: 16px;
+  color: $text-alt;
+  padding: 6px;
+  margin: 20px 6px;
+
+  button {
+    color: rgba($text-alt, 0.9);
+    border-radius: 6px;
+
+    &:hover {
+      color: $text;
+    }
+  }
+
+  &-player {
+    background: $accent;
+    padding: 6px 10px;
+    margin: 10px;
+    border-radius: 14px;
+  }
+
+  &-album-art {
+    border-radius: 16px;
+  }
+
+  &-title {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  &-subtitle {
+    font-weight: 500;
+    font-size: 0.8rem;
+  }
+}
