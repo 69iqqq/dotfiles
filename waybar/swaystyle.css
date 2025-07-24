@@ -14,17 +14,15 @@
 #workspaces button {
   font-size: 10px;
   padding: 0 5px;
+  margin-right: 3px;
   background: #333333;
   color: #FFFFFF;
-  margin-right: 4px;
-  /* <-- space between buttons */
+
   border: 1px solid #555555;
 }
 
-#workspaces button.active {
-  font-size: 100px;
-  margin-right: 4px;
-
+#workspaces button.focused {
+  font-size: 10px;
   background: #285577;
   color: #FFFFFF;
   border: 1px solid #406D87;

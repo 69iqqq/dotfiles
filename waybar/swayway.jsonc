@@ -3,12 +3,13 @@
   "position": "bottom",
   "height": 20,
   "modules-left": [
-    "hyprland/workspaces",
+    "sway/workspaces",
     "hyprland/mode"
   ],
   "modules-center": [],
   "modules-right": [
     "mpd",
+    // "custom/separator1",
     "mpris",
     "custom/separator1",
     "idle_inhibitor",
@@ -139,11 +140,36 @@
   //     "5": "五"
   //   }
   // }
+  // "mpd": {
+  //   "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+  //   "format-disconnected": "Disconnected ",
+  //   "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+  //   "interval": 2,
+  //   "consume-icons": {
+  //     "on": " " // Icon shows only when "consume" is on
+  //   },
+  //   "random-icons": {
+  //     "off": "<span color=\"#f53c3c\"> </span>",
+  //     "on": " "
+  //   },
+  //   "repeat-icons": {
+  //     "on": " "
+  //   },
+  //   "single-icons": {
+  //     "on": "1 "
+  //   },
+  //   "state-icons": {
+  //     "paused": "",
+  //     "playing": ""
+  //   },
+  //   "tooltip-format": "MPD (connected)",
+  //   "tooltip-format-disconnected": "MPD (disconnected)"
+  // },
   "mpris": {
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "{player_icon} {dynamic}",
+    "format": "􀑪 ",
+    "format-paused": "􀑪 ",
     "player-icons": {
-      "default": "􀑪", // your music symbol
+      "default": "􀑪 ", // your music symbol
       "mpv": "󰝚",
       "spotify": "󰓇"
     },
@@ -159,11 +185,12 @@
     "on-click": "playerctl play-pause"
   },
   "mpd": {
-    "format": "{title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-    "format-stopped": "Stopped ",
-    "format-disconnected": "Disconnected ",
+    "format": "􀑪 {title:.10}",
+    "format-stopped": "",
+    "format-disconnected": "",
     "interval": 2,
     "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    "on-click": "mpc toggle"
   }
 }
