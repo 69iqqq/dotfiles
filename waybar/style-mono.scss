@@ -1,44 +1,37 @@
-// === SOLARIZED DARK PALETTE === //
-$solarized-base03: #002b36; // background
-$solarized-base02: #073642;
-$solarized-base01: #586e75;
-$solarized-base00: #657b83;
-$solarized-base0: #839496; // foreground
-$solarized-base1: #93a1a1;
-$solarized-base2: #eee8d5;
-$solarized-base3: #fdf6e3;
+// === GRAPHITE MONOCHROME PALETTE === //
+$graphite-darkest: #121212; // background
+$graphite-darker: #1e1e1e;
+$graphite-dark: #2a2a2a;
+$graphite-mid: #3a3a3a;
+$graphite-light: #5a5a5a;
+$graphite-lighter: #7a7a7a;
+$graphite-lightest: #bfbfbf; // foreground
+$graphite-white: #e0e0e0;
 
-$solarized-yellow: #b58900;
-$solarized-orange: #cb4b16;
-$solarized-red: rgba(220, 50, 47, 0.8);
-$solarized-magenta: #d33682;
-$solarized-violet: #6c71c4;
-$solarized-blue: #268bd2;
-$solarized-cyan: #2aa198;
-$solarized-green: #859900;
+$accent: #9e9e9e; // Subtle gray highlight
 
-// === THEME VARIABLES (SOLARIZED) === //
-$font-main: 'SF Pro Text';
+// === THEME VARIABLES === //
+$font-main: 'SF Pro Text', sans-serif;
 $font-size-base: 18px;
 $font-size-small: 15px;
 $font-size-medium: 17px;
 $font-size-large: 19px;
 $font-size-xl: 24px;
 
-$bg-main: $solarized-base03;
-$bg-alt: $solarized-base02;
-$bg-box: rgba($solarized-base0, 0.15);
-$bg-dark: $solarized-base02;
+$bg-main: $graphite-darkest;
+$bg-alt: $graphite-darker;
+$bg-box: rgba($graphite-lightest, 0.05);
+$bg-dark: $graphite-dark;
 
-$fg-primary: $solarized-base0;
-$fg-secondary: $solarized-base01;
-$fg-accent: $solarized-blue;
-$fg-good: $solarized-green;
-$fg-warn: $solarized-yellow;
-$fg-error: $solarized-red;
-$fg-cpu: $solarized-red;
-$fg-temp: $solarized-blue;
-$fg-launcher: $solarized-cyan;
+$fg-primary: $graphite-lightest;
+$fg-secondary: $graphite-light;
+$fg-accent: $accent;
+$fg-good: $graphite-white;
+$fg-warn: $graphite-light;
+$fg-error: #ff4c4c;
+$fg-cpu: $graphite-white;
+$fg-temp: $graphite-white;
+$fg-launcher: $graphite-lightest;
 
 $spacing-small: 5px;
 $spacing-medium: 10px;
@@ -53,7 +46,7 @@ $box-radius: 12px;
   font-family: $font-main;
   font-weight: bold;
   font-size: $font-size-base;
-  color: $solarized-base1;
+  color: $fg-primary;
 }
 
 window#waybar {
@@ -69,8 +62,7 @@ window#waybar {
 
 #custom-launcher {
   font-size: $font-size-base;
-  // color: $fg-launcher;
-  color: $solarized-yellow;
+  color: $fg-launcher;
   padding-right: $spacing-large;
 }
 
@@ -82,7 +74,6 @@ window#waybar {
 }
 
 #cpu {
-  // color: #ffffff;
   color: $fg-cpu;
   padding: 0 $spacing-medium 0 $spacing-medium + 2;
   border-radius: $radius 0 0 $radius;
@@ -119,16 +110,6 @@ window#waybar {
   background-color: $bg-box;
   margin: 7px 0;
   border-radius: $box-radius;
-
-  &:nth-child(n) {
-    // padding: 5px $spacing-medium $spacing-small $spacing-medium;
-  }
-
-  &:nth-child(1) {
-    // padding-left: $spacing-medium;
-    // padding-top: 5px;
-    // padding-bottom: $spacing-small;
-  }
 }
 
 #battery,
@@ -137,9 +118,7 @@ window#waybar {
 #network,
 #custom-updates,
 #custom-notification {
-
   font-size: $font-size-large;
-  // padding: 0 $spacing-small;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -155,23 +134,14 @@ window#waybar {
 
 @keyframes blink {
   to {
-    color: $solarized-base01;
+    color: $fg-secondary;
   }
 }
 
-#custom-update {
-  color: $fg-launcher;
-  padding-left: $spacing-small;
-  font-size: $font-size-large;
-}
-
-#custom-mic {
-  color: $fg-launcher;
-  padding-left: $spacing-small;
-  font-size: $font-size-xl;
-}
-
+#custom-update,
+#custom-mic,
 #custom-timer {
+  color: $fg-launcher;
   padding-left: $spacing-small;
   font-size: $font-size-xl;
 }
@@ -189,10 +159,6 @@ window#waybar {
   background-color: $bg-alt;
 }
 
-#network {
-  // color: $fg-accent;
-}
-
 #custom-dot {
   color: $fg-secondary;
   padding-right: $spacing-medium;
@@ -200,7 +166,7 @@ window#waybar {
 }
 
 #custom-dot-alt {
-  color: $solarized-base00;
+  color: $fg-secondary;
   padding: 0 $spacing-medium;
 }
 
@@ -246,12 +212,9 @@ window#waybar {
   color: $fg-warn;
 }
 
-#battery.charging {
-  color: $solarized-cyan;
-}
-
+#battery.charging,
 #battery.plugged {
-  color: $solarized-cyan;
+  color: $fg-accent;
 }
 
 #custom-quit {
@@ -265,7 +228,7 @@ window#waybar {
 
 menu {
   border-radius: 10px;
-  background: $solarized-base03;
+  background: $bg-main;
   font-weight: bold;
 }
 
@@ -275,24 +238,20 @@ menu {
   opacity: 0;
   border: none;
   box-shadow: none;
-  color: $solarized-yellow;
 }
 
 #pulseaudio-slider trough {
   min-height: 10px;
   min-width: 100px;
   border-radius: 10px;
-  // background-color: black;
   margin-right: 5px;
-  color: $solarized-yellow;
+  background-color: $graphite-mid;
   border: none;
-
 }
 
 #pulseaudio-slider highlight {
   min-width: 10px;
   border-radius: 5px;
-  border: none;
-  background-color: $solarized-yellow;
-  color: $solarized-yellow;
+  background-color: $fg-accent;
+  color: $fg-accent;
 }
